@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "es6",
+        "target": "es5",
+        "lib": ["es5", "es6", "dom"],
+        "jsx": "react",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "paths": {
+            "shared/*": ["src/shared/*"],
+            "auth/*": ["src/auth/*"],
+            "user/*": ["src/user/*"],
+            "layout/*": ["src/layout/*"],
+            "navigation/*": ["src/navigation/*"],
+            "actions/*": ["src/actions/*"],
+            "search/*": ["src/search/*"],
+            "notifications/*": ["src/notifications/*"],
+            "questions/*": ["src/questions/*"]
+        }
+    },
+    "include": ["src/**/*"],
+    "files": ["src/index.d.ts"]
+}
