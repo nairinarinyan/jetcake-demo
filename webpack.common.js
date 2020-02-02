@@ -71,6 +71,8 @@ exports.config = {
         extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
             shared: path.resolve(__dirname, './src/shared'),
+            assets: path.resolve(__dirname, './src/assets'),
+            styles: path.resolve(__dirname, './src/styles'),
         },
     },
     optimization: {

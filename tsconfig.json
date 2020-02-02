@@ -14,14 +14,8 @@
         "allowSyntheticDefaultImports": true,
         "paths": {
             "shared/*": ["src/shared/*"],
-            "auth/*": ["src/auth/*"],
             "user/*": ["src/user/*"],
-            "layout/*": ["src/layout/*"],
-            "navigation/*": ["src/navigation/*"],
-            "actions/*": ["src/actions/*"],
-            "search/*": ["src/search/*"],
-            "notifications/*": ["src/notifications/*"],
-            "questions/*": ["src/questions/*"]
+            "layout/*": ["src/layout/*"]
         }
     },
     "include": ["src/**/*"],

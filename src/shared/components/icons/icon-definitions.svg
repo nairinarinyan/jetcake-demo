@@ -1,0 +1,14 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="arrow-down" viewBox="0 0 6.35 6.35">
+        <defs>
+            <path id="a" d="M6.984 9.984h10.032L12 15z"/>
+        </defs>
+        <path d="M3.18 3.963l1.324-1.325h-2.65z" fill="currentColor"/>
+    </symbol>
+    <symbol id="arrow" viewBox="0 0 24 24">
+        <g id="24x24-/-ic_right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path id="bundle" d="M0 0h24v24H0z"/>
+            <path d="M9.281 15.89l3.89-3.89-3.89-3.89a.994.994 0 011.406-1.407L15.985 12l-5.296 5.297A.994.994 0 019.28 15.89z" id="Mask" fill="currentColor"/>
+        </g>
+    </symbol>
+</svg>

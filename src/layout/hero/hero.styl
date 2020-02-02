@@ -1,0 +1,46 @@
+@require '~styles/colors'
+
+@keyframes jump
+    from
+        transform translateY(-10px)
+    to
+        transform translateY(10px)
+
+.hero
+    height 100%
+    display flex
+    justify-content space-between
+    padding 5%
+    align-items center
+
+    img
+        max-height 100%
+        max-width 100%
+
+.scroll-circle-container
+    display flex
+    align-items flex-end
+    height 100%
+
+.scroll-circle
+    display flex
+    justify-content center
+    align-items center
+    width 100px
+    height 100px
+    border-radius 50%
+    background deep-blue
+    transition .2s ease-out
+    cursor pointer
+
+    &:hover
+        transform scale(1.1)
+
+.icon-container
+    animation jump .5s alternate infinite
+
+.icon
+    width 48px
+    height 48px
+    color white
+    transform rotate(90deg)
