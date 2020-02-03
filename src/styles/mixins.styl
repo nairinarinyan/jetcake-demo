@@ -1,0 +1,16 @@
+breakpoints = {
+    xs: 766px,
+    sm: 767px,
+    md: 1024px,
+    lg: 1280px,
+    xlg: 1366px,
+    xxlg: 1920px,
+}
+
+media-up(size)
+    @media (min-width breakpoints[size])
+        {block}
+
+media-down(size)
+    @media (max-width breakpoints[size])
+        {block}

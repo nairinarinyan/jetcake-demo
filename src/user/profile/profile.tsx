@@ -87,7 +87,7 @@ export const Profile: FunctionComponent<Props> = props => {
                                 );
                             })}
 
-                            <Button variant={ButtonVariant.PRIMARY}>Save</Button>
+                            <Button fluid variant={ButtonVariant.PRIMARY}>Save</Button>
                         </form>
                     </div>
                 }

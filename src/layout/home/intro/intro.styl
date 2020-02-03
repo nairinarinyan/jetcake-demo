@@ -1,4 +1,5 @@
 @require '~styles/colors'
+@require '~styles/mixins'
 
 .intro
     height 100%
@@ -8,6 +9,11 @@
 
 .card-grid
     display grid
-    grid-template-columns 1fr 1fr 1fr
-    grid-template-rows 1fr 1fr
-    grid-gap 48px
+    grid-template-columns 1fr 1fr
+    grid-template-rows 1fr 1fr 1fr
+    grid-gap 24px
+
+    +media-up(md)
+        grid-template-columns 1fr 1fr 1fr
+        grid-template-rows 1fr 1fr
+        grid-gap 48px

@@ -1,4 +1,5 @@
 @require '~styles/colors'
+@require '~styles/mixins'
 
 .steps
     display flex
@@ -6,7 +7,7 @@
 
 .step-circle
     position relative
-    margin 0 48px
+    margin 0 20px
     width 40px
     height 40px
     border-radius 50%
@@ -20,13 +21,20 @@
     border 2px solid deep-blue
     cursor not-allowed
 
+    +media-up(md)
+        margin 0 48px
+
     &:not(:last-child):after
         content ' '
         position absolute
-        right -80px
-        width 60px
+        right -35px
+        width 25px
         height 1px
         background deep-blue
+
+        +media-up(md)
+            right -80px
+            width 60px
 
     &.active
         background deep-blue

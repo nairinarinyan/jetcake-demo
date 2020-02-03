@@ -14,12 +14,15 @@ class AuthBloc {
     avatarImg = new BehaviorSubject<File>(null);
     questions = new BehaviorSubject<Question[]>([]);
 
+    private goToProfile = () => {
+        // give some time to firebase
+        setTimeout(() => {
+            history.replace('/profile');
+        }, 500);
+    }
+
     login(email: string, password: string) {
-        firebaseService.login(email, password).subscribe(() => {
-            setTimeout(() => {
-                history.replace('/profile');
-            }, 500);
-        });
+        firebaseService.login(email, password).subscribe(this.goToProfile);
     }
 
     setCredentials(email: string, password: string, phone: string) {
@@ -50,11 +53,7 @@ class AuthBloc {
                 firebaseService.uploadImage(avatarImg, uid),
                 firebaseService.setAdditionalData(uid, phoneNumber, questions)
             )
-            .subscribe(res => {
-                setTimeout(() => {
-                    history.replace('/profile');
-                }, 500);
-            });
+            .subscribe(this.goToProfile);
         });
     }
 

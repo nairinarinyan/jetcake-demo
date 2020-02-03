@@ -1,15 +1,17 @@
 @require '~styles/colors'
+@require '~styles/mixins'
 
 @keyframes jump
     from
-        transform translateY(-10px)
+        transform translateY(-8px)
     to
-        transform translateY(10px)
+        transform translateY(8px)
 
 .hero
     height 100%
     display flex
-    justify-content space-between
+    justify-content space-around
+    flex-direction column
     padding 5%
     align-items center
 
@@ -17,21 +19,31 @@
         max-height 100%
         max-width 100%
 
+    +media-up(md)
+        flex-direction row
+        justify-content space-between
+
 .scroll-circle-container
     display flex
     align-items flex-end
-    height 100%
+
+    +media-up(md)
+        height 100%
 
 .scroll-circle
     display flex
     justify-content center
     align-items center
-    width 100px
-    height 100px
+    width 50px
+    height 50px
     border-radius 50%
     background deep-blue
     transition .2s ease-out
     cursor pointer
+
+    +media-up(md)
+        width 100px
+        height 100px
 
     &:hover
         transform scale(1.1)
@@ -40,7 +52,11 @@
     animation jump .5s alternate infinite
 
 .icon
-    width 48px
-    height 48px
+    width 24px
+    height 24px
     color white
     transform rotate(90deg)
+
+    +media-up(md)
+        width 48px
+        height 48px

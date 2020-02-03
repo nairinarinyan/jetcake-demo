@@ -1,4 +1,5 @@
 @require '~styles/colors'
+@require '~styles/mixins'
 
 .button
     font-size 1rem
@@ -9,7 +10,7 @@
     border 2px solid
     color deep-blue
     background white
-    min-width 130px
+    min-width 100px
     height 40px
     transition .2s ease-out
 
@@ -32,6 +33,9 @@
         background light-blue
         color #7a7a7a
         border-color light-blue
+    
+    +media-up(md)
+        min-width 130px
 
 .fluid
     width 100%
