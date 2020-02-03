@@ -15,7 +15,8 @@
         "paths": {
             "shared/*": ["src/shared/*"],
             "user/*": ["src/user/*"],
-            "layout/*": ["src/layout/*"]
+            "layout/*": ["src/layout/*"],
+            "auth/*": ["src/auth/*"]
         }
     },
     "include": ["src/**/*"],

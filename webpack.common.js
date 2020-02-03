@@ -73,6 +73,9 @@ exports.config = {
             shared: path.resolve(__dirname, './src/shared'),
             assets: path.resolve(__dirname, './src/assets'),
             styles: path.resolve(__dirname, './src/styles'),
+            layout: path.resolve(__dirname, './src/layout'),
+            auth: path.resolve(__dirname, './src/auth'),
+            user: path.resolve(__dirname, './src/user'),
         },
     },
     optimization: {

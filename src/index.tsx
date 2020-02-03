@@ -1,8 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Router } from 'react-router-dom';
+import { history } from 'shared/history';
+import iconDefinitions from '!!raw-loader!./shared/components/icons/icon-definitions.svg';
 
 import * as firebase from 'firebase';
 import 'firebase/auth';
+
+import { Root } from './root/root';
 
 const firebaseConfig = {
     apiKey: "AIzaSyB6SF09sSL2gaE7mgn0QSykzupnJM0DIGw",
@@ -18,29 +23,19 @@ firebase.initializeApp(firebaseConfig);
 
 firebase.auth().onAuthStateChanged(user => {
     const a = firebase.auth().currentUser;
-    console.log(a);
 });
 
 import './styles/styles.styl';
-import { Header } from './layout/header/header';
-import { Router } from 'react-router-dom';
-import { history } from 'shared/history';
-import { Hero } from './layout/hero/hero';
-import iconDefinitions from '!!raw-loader!./shared/components/icons/icon-definitions.svg';
-import { Home } from './layout/home/home';
 
-const Root = () => {
+const App = () => {
     return (
         <>
             <span style={{ display: 'block', height: 0 }} dangerouslySetInnerHTML={{ __html: iconDefinitions }} />
             <Router history={history}>
-                <div className="container">
-                    <Header />
-                    <Home />
-                </div>
+                <Root />
             </Router>
         </>
     );
 };
 
-render(<Root />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));

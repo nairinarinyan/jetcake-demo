@@ -17,7 +17,7 @@ interface Props {
     fluid?: boolean;
 }
 
-const ButtonContent: FunctionComponent<Props> = ({ variant, fluid, children }) => {
+const ButtonContent: FunctionComponent<Props> = ({ variant, fluid, onClick, children }) => {
     const isPrimary = variant === ButtonVariant.PRIMARY;
     const isSecondary = variant === ButtonVariant.SECONDARY;
     const isLink = variant === ButtonVariant.LINK;
@@ -29,17 +29,19 @@ const ButtonContent: FunctionComponent<Props> = ({ variant, fluid, children }) =
                 [isSecondary, 'secondary'],
                 [isLink, 'link'],
                 [fluid, 'fluid'],
-            )}>
+            )}
+            onClick={onClick}
+        >
             {children}
         </button>
     );
 };
 
 export const Button: FunctionComponent<Props> = props => {
-    const { to, fluid } = props;
+    const { to, fluid, onClick } = props;
 
     return to ?
-        <Link to={to} className={classes('anchor', [fluid, 'fluid'])}>
+        <Link to={to} className={classes('anchor', [fluid, 'fluid'])} onClick={onClick}>
             <ButtonContent {...props} />
         </Link> :
         <ButtonContent {...props} />
