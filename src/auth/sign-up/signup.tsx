@@ -7,6 +7,7 @@ import './signup.styl';
 import { SetCredentials } from './set-credentials/set-credentials';
 import { SetAvatar } from './set-avatar/set-avatar';
 import { SetSecurityQuestions } from './set-security-questions/set-security-questions';
+import { authBloc } from '../auth.bloc';
 
 interface Props {
 }
@@ -23,10 +24,6 @@ export const SignUp: FunctionComponent<Props> = props => {
         setStepIdx(stepIdx + 1);
     }, [stepIdx]);
 
-    const signUp = () => {
-        
-    };
-
     return (
         <div className="container">
             <div className="content">
@@ -37,7 +34,7 @@ export const SignUp: FunctionComponent<Props> = props => {
                         case 1:
                             return <SetAvatar onSubmit={incrementStep} />
                         case 2:
-                            return <SetSecurityQuestions onSubmit={signUp} />
+                            return <SetSecurityQuestions onSubmit={authBloc.signUp} />
                     }
                 }} />
             </div>

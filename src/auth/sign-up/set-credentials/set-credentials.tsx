@@ -1,6 +1,7 @@
-import React, { FunctionComponent, useCallback, useState, FormEvent } from 'react';
+import React, { FunctionComponent, useState, FormEvent } from 'react';
 import { TextInput, TextInputType } from 'shared/components/text-input/text-input';
 import { Button, ButtonVariant } from 'shared/components/button/button';
+import { authBloc } from 'auth/auth.bloc';
 
 import './set-credentials.styl';
 
@@ -11,11 +12,16 @@ interface Props {
 export const SetCredentials: FunctionComponent<Props> = ({ onSubmit }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [phone, setPhone] = useState('');
 
-    const handleSubmit = useCallback((evt: FormEvent) => {
+    // poor man's validation
+    const disabled = !email || !password || password.length < 6 || !phone;
+
+    const handleSubmit = (evt: FormEvent) => {
         evt.preventDefault();
+        authBloc.setCredentials(email, password, phone);
         onSubmit();
-    }, []);
+    };
 
     return (
         <div className="container">
@@ -25,6 +31,7 @@ export const SetCredentials: FunctionComponent<Props> = ({ onSubmit }) => {
                     <TextInput
                         label="Email"
                         placeholder="your.email@provider.com"
+                        type={TextInputType.EMAIL}
                         value={email}
                         onChange={setEmail}
                     />
@@ -35,8 +42,15 @@ export const SetCredentials: FunctionComponent<Props> = ({ onSubmit }) => {
                         value={password}
                         onChange={setPassword}
                     />
+                    <TextInput
+                        label="Phone number"
+                        placeholder="Your phone number"
+                        type={TextInputType.TEL}
+                        value={phone}
+                        onChange={setPhone}
+                    />
                 </div>
-                <Button fluid variant={ButtonVariant.PRIMARY}>
+                <Button disabled={disabled} fluid variant={ButtonVariant.PRIMARY}>
                     Next
                 </Button>
             </form>

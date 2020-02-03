@@ -3,7 +3,9 @@ import './text-input.styl';
 
 export enum TextInputType {
     TEXT = 'text',
-    PASSWORD = 'password'
+    EMAIL = 'email',
+    PASSWORD = 'password',
+    TEL = 'tel',
 }
 
 interface Props {
