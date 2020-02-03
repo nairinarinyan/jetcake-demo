@@ -8,10 +8,7 @@ import { Profile } from 'user/profile/profile';
 
 import './root.styl';
 
-interface Props {
-}
-
-export const Root: FunctionComponent<Props> = props => {
+export const Root: FunctionComponent = () => {
     return (
         <div className="container">
             <Header />

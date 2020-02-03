@@ -1,23 +1,19 @@
-import React, { FunctionComponent, useCallback, FormEvent, useState } from 'react';
-import { TextInput, TextInputType } from 'shared/components/text-input/text-input';
-import { Button, ButtonVariant } from 'shared/components/button/button';
+import React, { FunctionComponent, useCallback, useState } from 'react';
 import { Stepper } from 'shared/components/stepper/stepper';
+import { authBloc } from 'auth/auth.bloc';
 
-import './signup.styl';
 import { SetCredentials } from './set-credentials/set-credentials';
 import { SetAvatar } from './set-avatar/set-avatar';
 import { SetSecurityQuestions } from './set-security-questions/set-security-questions';
-import { authBloc } from '../auth.bloc';
 
-interface Props {
-}
+import './signup.styl';
 
 enum SignUpStep {
     FIRST,
     SECOND
 }
 
-export const SignUp: FunctionComponent<Props> = props => {
+export const SignUp: FunctionComponent = () => {
     const [stepIdx, setStepIdx] = useState(0);
 
     const incrementStep = useCallback(() => {

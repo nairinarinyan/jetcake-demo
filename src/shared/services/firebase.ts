@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import 'firebase/auth';
 import { from } from 'rxjs';
 import { Question } from 'auth/auth.bloc';
-import { userBloc } from '../../user/user.bloc';
+import { userBloc } from 'user/user.bloc';
 
 const firebaseConfig = {
     apiKey: "AIzaSyB6SF09sSL2gaE7mgn0QSykzupnJM0DIGw",

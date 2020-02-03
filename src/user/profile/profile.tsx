@@ -7,10 +7,7 @@ import { Button, ButtonVariant } from 'shared/components/button/button';
 
 import './profile.styl';
 
-interface Props {
-}
-
-export const Profile: FunctionComponent<Props> = props => {
+export const Profile: FunctionComponent = () => {
     const user = useBloc(userBloc.currentUser);
     const imageUrl = useBloc(userBloc.imageUrl);
     const userData = useBloc(userBloc.userData);

@@ -1,14 +1,11 @@
-import React, { FunctionComponent, useCallback, useState, FormEvent } from 'react';
+import React, { FunctionComponent, useState, FormEvent } from 'react';
 import { TextInput, TextInputType } from 'shared/components/text-input/text-input';
 import { Button, ButtonVariant } from 'shared/components/button/button';
 import { authBloc } from 'auth/auth.bloc';
 
 import './login.styl';
 
-interface Props {
-}
-
-export const Login: FunctionComponent<Props> = props => {
+export const Login: FunctionComponent = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 

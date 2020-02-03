@@ -4,10 +4,7 @@ import { Intro } from './intro/intro';
 
 import './home.styl';
 
-interface Props {
-}
-
-export const Home: FunctionComponent<Props> = props => {
+export const Home: FunctionComponent = () => {
     const introRef = useRef<HTMLDivElement>();
     const scrollToIntro = () => {
         introRef.current.scrollIntoView({ behavior: 'smooth' });

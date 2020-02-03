@@ -3,12 +3,9 @@ import { InfoCard } from './info-card/info-card';
 
 import './intro.styl';
 
-interface Props {
-}
-
 const text = 'Some interesting stuff you can hover';
 
-export const Intro: FunctionComponent<Props> = props => {
+export const Intro: FunctionComponent = () => {
     return (
         <div className="intro">
             <div className="card-grid">
